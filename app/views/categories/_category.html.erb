@@ -4,14 +4,20 @@
     <%= category.name %>
   </p>
 
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
+  <%
+=begin%>
+ <div>
+    <%= image_tag "#{category.icon}.png", alt: "category icon", class: 'icon' %>
+  </div> 
+<%
+=end%>
 
   <p>
-    <strong>Author:</strong>
-    <%= category.author_id %>
+    <%= category.created_at.strftime("%d %B %Y") %>
   </p>
+
+ <div>
+    <p>&dollar;&nbsp;<%= calculate_transaction_amount(category) %></p>
+  </div> 
 
 </div>

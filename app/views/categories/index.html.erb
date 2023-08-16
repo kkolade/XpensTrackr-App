@@ -1,11 +1,16 @@
 <h1>Categories</h1>
 
 <div id="categories">
+  <div>
+    <p>Total Budget</p>
+    <p>&dollar;&nbsp;<%= calculate_total_budget %></p>
+  </div>
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <%= link_to category do %>
+      <div>
+        <%= render category %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

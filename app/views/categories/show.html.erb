@@ -1,4 +1,44 @@
-<%= render @category %>
+ <div>
+    <%= link_to 'Categories' categories_path %>
+  </div>
+  <div>
+    <p>TRANSACTIONS</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div>
+
+ <div>
+    <%
+=begin%>
+ <%= image_tag "#{@transaction.icon}.png", alt: "Bill icon", class: 'icon' %> 
+<%
+=end%>
+    <p><%= @category.name %></p>
+  </div> 
+
+  <p class= 'text2'>The following are the items to be purchased for <%= @category.name %> for the year.
+  The total amount for <%= @category.name %> items is stated at the bottom of the list.</p>
+  <hr>
+  <div id="items">
+    <% transaction_amount = 0 %>
+    <% @transactions.each do |transaction| %>
+      <%= render transaction %>
+      <% transaction_amount += transaction.amount %>
+    <% end %>
+  </div>
+  <div>
+    <p>TOTAL AMOUNT</p>
+    <p >&dollar;&nbsp;<%= transaction_amount %></p>
+  </div>
+</div>
+
+<div class= 'empty'></div>
+
+<div class= 'big'>
+    <%= link_to "ADD", new_transaction_path, class: '' %>
+</div>
 
 <div>
   <%= link_to "Edit this category", edit_category_path(@category) %> |
