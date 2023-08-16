@@ -69,4 +69,17 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:name, :icon, :author_id)
     end
+
+    def calculate_transaction_count(category)
+      Item.where(category_id: category.id).count
+    end
+  
+    def calculate_transaction_amount(category)
+      @transactions = transaction.where(category_id: category.id)
+      transaction_amount = 0
+      @transactions.each do |transaction|
+        transaction_amount += transaction.amount
+      end
+      transaction_amount
+    end
 end
