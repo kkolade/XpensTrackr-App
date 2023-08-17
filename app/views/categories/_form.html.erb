@@ -1,0 +1,33 @@
+<%= form_with(model: category) do |form| %>
+  <% if category.errors.any? %>
+    <div>
+      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :icon %>
+    <div class="icon-select">
+      <%= form.collection_select :icon, Category::ICON_CHOICES, ->(icon) { icon[:class] }, ->(icon) { icon[:label] }, { include_blank: true }, class: 'icon-option' %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.hidden_field :author_id, value: current_user.id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
