@@ -23,3 +23,17 @@ body {
   color: $color_secondary;
   font-family: $font_regular;
 }
+
+.app {
+  height: 100vh;
+  background: center center / contain no-repeat url(phone_frame_cutout.png);
+  padding-top: 84px;
+}
+
+.app-container {
+  width: 302px;
+  height: 532px;
+  margin: 0 auto;
+  border: 1px solid grey;
+
+}
