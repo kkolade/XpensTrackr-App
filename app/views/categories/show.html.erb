@@ -1,10 +1,7 @@
  <div>
-    <%= link_to 'Categories' categories_path %>
-  </div>
   <div>
     <p>TRANSACTIONS</p>
   </div>
-  <div class= 'empty-div'></div>
 </div>
 
 <div>
@@ -15,6 +12,7 @@
  <%= image_tag "#{@transaction.icon}.png", alt: "Bill icon", class: 'icon' %> 
 <%
 =end%>
+<span class="icon <%= @category.icon %>"></span>
     <p><%= @category.name %></p>
   </div> 
 
