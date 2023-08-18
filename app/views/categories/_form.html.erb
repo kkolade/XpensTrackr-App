@@ -17,11 +17,9 @@
   </div>
 
   <div>
-    <%= form.label :icon %>
-    <div class="icon-select">
-      <%= form.collection_select :icon, Category::ICON_CHOICES, ->(icon) { icon[:class] }, ->(icon) { icon[:label] }, { include_blank: true }, class: 'icon-option' %>
+      <%= form.label :icon, style: "display: block" %>
+      <%= form.select :icon, ['default', 'family', 'food', 'sports', 'home', 'travel', 'charity', 'school', 'utilty', 'Phone', 'automobile'], { prompt: "select" }, class: "form-select input-field prompt" %>
     </div>
-  </div>
 
   <div>
     <%= form.hidden_field :author_id, value: current_user.id %>

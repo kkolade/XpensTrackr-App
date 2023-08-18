@@ -1,25 +1,16 @@
-<div id="<%= dom_id category %>">
-  <span class="icon">
-    <i class="<%= category.icon %>"></i>
-  </span>
+<div id="<%= dom_id category %>", class='item-card' >
+  <div class='card-section-1'>
+    <%= image_tag "#{category.icon}.png", alt: "category icon", class: 'category-icon' %>
+  </div> 
   <p>
-    <strong>Name:</strong>
     <%= category.name %>
   </p>
 
-  <%
-=begin%>
- <div>
-    <%= image_tag "#{category.icon}.png", alt: "category icon", class: 'icon' %>
-  </div> 
-<%
-=end%>
-
-  <p>
+  <p class='card-section-2'>
     <%= category.created_at.strftime("%d %B %Y") %>
   </p>
 
- <div>
+ <div style='text-align: right;'>
     <p>&dollar;&nbsp;<%= calculate_transaction_amount(category) %></p>
   </div> 
 

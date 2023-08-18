@@ -1,13 +1,13 @@
-<h1>Categories</h1>
 
 <div id="categories">
-  <div>
-    <p>Total Budget</p>
+<h2 class='title'>Categories</h2>
+  <div class='sub-title'>
+    <p>Total Expenses</p>
     <p>&dollar;&nbsp;<%= calculate_total_budget %></p>
   </div>
   <% @categories.each do |category| %>
-    <%= link_to category do %>
-      <div>
+    <%= link_to category, class: 'card-link' do %>
+      <div class='card-box'>
         <%= render category %>
       </div>
     <% end %>
