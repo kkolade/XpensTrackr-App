@@ -12,20 +12,20 @@
   <% end %>
 
   <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <% form.label :name %>
+    <%= form.text_field :name, class: 'form-element', placeholder: 'Name' %>
   </div>
 
   <div>
-      <%= form.label :icon, style: "display: block" %>
-      <%= form.select :icon, ['default', 'family', 'food', 'sports', 'home', 'travel', 'charity', 'school', 'utilty', 'Phone', 'automobile'], { prompt: "select" }, class: "form-select input-field prompt" %>
+      <% form.label :icon, style: "display: block" %>
+      <%= form.select :icon, ['default', 'family', 'food', 'sports', 'home', 'travel', 'charity', 'school', 'utilty', 'Phone', 'automobile'], { prompt: "Select an icon for the Category" }, class: "form-select input-field prompt" %>
     </div>
 
   <div>
     <%= form.hidden_field :author_id, value: current_user.id %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div style='margin: 12px; '>
+    <%= form.submit 'Create Category', class: 'btn' %>
   </div>
 <% end %>

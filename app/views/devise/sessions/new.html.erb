@@ -1,7 +1,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <%= link_to '<', root_path %>
-  <div class="actions">
-    <%= f.submit "Log in", class: 'btn' %>
+  <div class='login'>
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+    <p style='margin-top: auto; margin-buttom: auto;'>LOGIN</P>
+    <div class="actions">
+      <%= f.submit "Log in", class: 'btn' %>
+    </div>
   </div>
   
     <% f.label :email %><br />
@@ -11,14 +16,8 @@
     <% f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password", class: 'form-element', placeholder: 'Password' %>
 
-  <% if devise_mapping.rememberable? %>
-    
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-
-  <% end %>
-
 
 <% end %>
-
- <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+<div>
+ <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'link' %><br />
+</div>

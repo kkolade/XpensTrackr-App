@@ -1,17 +1,20 @@
-
-<div id="categories">
-<h2 class='title'>Categories</h2>
-  <div class='sub-title'>
-    <p>Total Expenses</p>
-    <p>&dollar;&nbsp;<%= calculate_total_budget %></p>
+<div class='category-container'>
+  <div id="categories">
+    <h2 class='title'>Categories</h2>
+    <div class='sub-title'>
+      <p>Total Expenses</p>
+      <p>&dollar;&nbsp;<%= calculate_total_budget %></p>
+    </div>
+    <div class='list-container'>
+      <% @categories.each do |category| %>
+        <%= link_to category, class: 'card-link' do %>
+          <div class='card-box'>
+            <%= render category %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <% @categories.each do |category| %>
-    <%= link_to category, class: 'card-link' do %>
-      <div class='card-box'>
-        <%= render category %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
 
-<%= link_to "New category", new_category_path %>
+  <%= link_to "New category", new_category_path, class: 'btn btn-primary' %>
+</div>

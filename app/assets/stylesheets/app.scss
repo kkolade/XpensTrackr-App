@@ -25,6 +25,7 @@ body {
   color: $color_secondary;
   background-color: $color_off-white;
   font-family: $font_regular;
+  margin: 0;
 }
 
 .app {
@@ -56,6 +57,24 @@ body {
     align-items: stretch;
     width: 100%;
   }
+}
+
+.login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color_primary;
+  color: $color_white;
+  padding-left: 15px;
+  margin-bottom: 12px;
+}
+
+.link {
+  color: $color_secondary; 
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
 }
 
 .btn {
@@ -104,12 +123,18 @@ body {
   justify-content: space-between;
 }
 
+.list-container {
+  height: 385px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .card-link {
   text-decoration: none;
 }
 
 .item-card {
-  margin: 5px;
+  margin: 7px;
   padding: 8px;
   color: $color_secondary;
   background-color: $color_white;
@@ -127,6 +152,12 @@ body {
 
 .card-section-2 { 
   grid-area: 2 / 2 / 3 / 4; 
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .category-icon {

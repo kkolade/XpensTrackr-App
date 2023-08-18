@@ -19,8 +19,12 @@
    <body>
     <div class="app">
       <div class="app-container">
-        <%= render partial: "shared/navbar" %>
-        <%= render partial: "shared/flash" %>
+        <%
+=begin%>
+ <%= render partial: "shared/navbar" %>
+        <%= render partial: "shared/flash" %> 
+<%
+=end%>
         <%= yield %>
       </div>
     </div>
