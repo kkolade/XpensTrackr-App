@@ -16,9 +16,13 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
-    <%= render partial: "shared/navbar" %>
-    <%= render partial: "shared/flash" %>
-    <%= yield %>
+   <body>
+    <div class="app">
+      <div class="app-container">
+        <%= render partial: "shared/navbar" %>
+        <%= render partial: "shared/flash" %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

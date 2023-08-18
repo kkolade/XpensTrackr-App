@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'proximanova-bold';
+  src: url('proximanova/proximanova-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proximanova-light';
+  src: url('proximanova/proximanova-light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$color_primary: #3778c2;
+$color_secondary: #434b54;
+$color_ascent: #5fb523;
+
+$font_regular: 'proximanova-light';
+$font_bold: 'proximanova-bold';
+
+body {
+  color: $color_secondary;
+  font-family: $font_regular;
+}
+
+.app {
+  height: 100vh;
+  background: center center / contain no-repeat url(phone_frame_cutout.png);
+  padding-top: 84px;
+}
+
+.app-container {
+  width: 302px;
+  height: 532px;
+  margin: 0 auto;
+  border: 1px solid grey;
+}
+
+.splash-title {
+  font-family: $font_bold;
+}
