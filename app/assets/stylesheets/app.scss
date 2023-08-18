@@ -15,6 +15,7 @@
 $color_primary: #3778c2;
 $color_secondary: #434b54;
 $color_ascent: #5fb523;
+$color_white: #fff;
 
 $font_regular: 'proximanova-light';
 $font_bold: 'proximanova-bold';
@@ -37,6 +38,36 @@ body {
   border: 1px solid grey;
 }
 
-.splash-title {
-  font-family: $font_bold;
+.splash-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: space-around;
+
+  .splash-title {
+    font-family: $font_bold;
+  }
+
+  .login-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+
+.btn {
+  display: block;
+  background-color: $color_primary;
+  color: $color_white;
+  text-align: center;
+  border-radius: 0;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  color: $color_primary;
+  background-color: $color_white;
+  border: none;
 }
