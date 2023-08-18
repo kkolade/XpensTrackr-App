@@ -13,8 +13,8 @@
     <h3 class='text-1'><%= @category.name %></h3>
   </div> 
 
-  <p class= ''>Details expenses for <%= @category.name %> for the year.
-  The total amount for <%= @category.name %> is at the buttom of the list.</p>
+  <p class= ''>Details expenses for <%= @category.name %> so far. <br>
+  The total amount for <%= @category.name %> is found below.</p>
   <hr style='padding: 0; marging: 0 !important;'>
     <div id="items" class='trans-container' >
       <% transaction_amount = 0 %>
@@ -24,13 +24,13 @@
       <% end %>
     </div>
 
-  <div>
+  <div class='trans-total'>
     <p style='padding: 0; margin: 0;'>TOTAL AMOUNT</p>
     <p  style='padding: 0; margin: 0;'>&dollar;&nbsp;<%= transaction_amount %></p>
   </div>
 </div>
 
 <div style='margin: 12px;' >
-    <%= link_to "ADD A TRANSACTION", new_transaction_path, class: 'btn' %>
+    <%= link_to "ADD A TRANSACTION", new_transaction_path, class: 'btn btn-submit' %>
 </div>
 

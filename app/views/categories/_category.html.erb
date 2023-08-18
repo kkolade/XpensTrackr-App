@@ -6,11 +6,11 @@
     <%= category.name %>
   </p>
 
-  <p class='card-section-2'>
+  <p class='card-section-2 small'>
     <%= category.created_at.strftime("%d %B %Y") %>
   </p>
 
- <div style='text-align: right;'>
+ <div style='text-align: right; font-weight: bold;'>
     <p>&dollar;&nbsp;<%= calculate_transaction_amount(category) %></p>
   </div> 
 

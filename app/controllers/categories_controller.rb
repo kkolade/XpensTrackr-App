@@ -5,13 +5,13 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.all.order(created_at: :desc)
   end
 
   # GET /categories/1 or /categories/1.json
   def show
     @categories = Category.where(author_id: current_user.id)
-    @transactions = Transaction.where(category_id: params[:id])
+    @transactions = Transaction.where(category_id: params[:id]).order(created_at: :desc)
   end
 
   # GET /categories/new
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
+        format.html { redirect_to root_path, notice: "Category was successfully created." }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
