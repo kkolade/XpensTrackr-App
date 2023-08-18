@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions or /transactions.json
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.includes(:category).all
   end
 
   # GET /transactions/1 or /transactions/1.json
@@ -62,7 +62,7 @@ class TransactionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transaction
-      @transaction = Transaction.find(params[:id])
+      @transaction = Transaction.includes(:category).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
