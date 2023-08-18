@@ -1,6 +1,17 @@
+
 <div class='category-container'>
   <div id="categories">
-    <h2 class='title'>Categories</h2>
+    <div class='login'>
+      <div class= 'bars'>
+        <span class= 'bar'></span>
+        <span class= 'bar'></span>
+        <span class= 'bar'></span>
+      </div>
+      <h2 class=''>Categories</h2>
+      <div>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+      </div>
+    </div> 
     <div class='sub-title'>
       <p>Total Expenses</p>
       <p>&dollar;&nbsp;<%= calculate_total_budget %></p>
