@@ -1,6 +1,11 @@
-<div>
-  <p class='title'>TRANSACTIONS</p>
-</div>
+<div class='login'>
+    <%= link_to categories_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+    <p style='margin-top: auto; margin-buttom: auto;'>TRANSACTIONS</P>
+    <div></div>
+    
+  </div>
 
 <div class='page-container', style='background-color: white;'>
   <div class='transaction-title'>
@@ -10,26 +15,22 @@
 
   <p class= ''>Details expenses for <%= @category.name %> for the year.
   The total amount for <%= @category.name %> is at the buttom of the list.</p>
-  <hr>
-  <div id="items">
-    <% transaction_amount = 0 %>
-    <% @transactions.each do |transaction| %>
-      <%= render transaction %>
-      <% transaction_amount += transaction.amount %>
-    <% end %>
-  </div>
+  <hr style='padding: 0; marging: 0 !important;'>
+    <div id="items" class='trans-container' >
+      <% transaction_amount = 0 %>
+      <% @transactions.each do |transaction| %>
+        <%= render transaction %>
+        <% transaction_amount += transaction.amount %>
+      <% end %>
+    </div>
+
   <div>
-    <p>TOTAL AMOUNT</p>
-    <p >&dollar;&nbsp;<%= transaction_amount %></p>
+    <p style='padding: 0; margin: 0;'>TOTAL AMOUNT</p>
+    <p  style='padding: 0; margin: 0;'>&dollar;&nbsp;<%= transaction_amount %></p>
   </div>
 </div>
 
-<div class= 'empty'></div>
-
-<div class= 'big'>
-    <%= link_to "ADD", new_transaction_path, class: '' %>
+<div style='margin: 12px;' >
+    <%= link_to "ADD A TRANSACTION", new_transaction_path, class: 'btn' %>
 </div>
 
-<div>
-  <%= link_to "Back to categories", categories_path %>
-</div>

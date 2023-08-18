@@ -1,22 +1,12 @@
-<div id="<%= dom_id transaction %>">
-  <p>
+<div id="<%= dom_id transaction %>" class='trans-card'>
+  <p style='padding: 0; margin: 0;' >
     <strong>Name:</strong>
     <%= transaction.name %>
   </p>
 
-  <p>
+  <p style='padding: 0; margin: 0;'>
     <strong>Amount:</strong>
     <%= transaction.amount %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= transaction.author_id %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= transaction.category_id %>
   </p>
 
 </div>
